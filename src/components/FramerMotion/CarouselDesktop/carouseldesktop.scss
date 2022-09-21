@@ -1,0 +1,172 @@
+@import "../../../sass/global";
+.carousel_desktop {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .carousel_desktop {
+    width: 100%;
+    height: 325px;
+    display: flex;
+    column-gap: 20px;
+    color: white;
+    margin-top: 30px;
+
+    .current {
+      position: relative;
+      width: 70%;
+      height: 100%;
+      flex-shrink: 0;
+      flex-grow: 1;
+      border-radius: 20px;
+      .current_img {
+        flex-shrink: 0;
+        object-position: top;
+        border-radius: 20px;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+      .current_text {
+        position: absolute;
+        width: 320px;
+        height: 270px;
+        top: 35%;
+        left: 5%;
+        display: flex;
+        flex-direction: column;
+        z-index: 50;
+        color: white;
+        h1 {
+          width: fit-content;
+          margin-bottom: 20px;
+          background-color: rgb(42, 42, 42, 0.2);
+          padding: 10px;
+          border-radius: 5px;
+        }
+        p {
+          width: fit-content;
+          margin-bottom: 20px;
+          background-color: rgb(42, 42, 42, 0.2);
+          padding: 10px;
+          border-radius: 5px;
+        }
+        .current_price {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          p {
+            margin-top: 20px;
+          }
+          .current_bg {
+            position: relative;
+            width: 280px;
+            height: 50px;
+            margin-left: 10px;
+
+            button {
+              width: 100%;
+              height: 100%;
+              border: none;
+              padding: 10px;
+              background-color: transparent;
+              color: white;
+              border-radius: 5px;
+            }
+            .white_bg {
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              top: 0;
+              left: 0;
+              z-index: 1;
+              border-radius: 5px;
+              &:hover {
+                background-color: white;
+                opacity: 0.1;
+              }
+            }
+          }
+        }
+      }
+    }
+    .preview {
+      width: fit-content;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex-shrink: 1;
+      //   background-color: red;
+      .preview_card {
+        width: 160px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        border-radius: 8px;
+        padding-left: 10px;
+        background: linear-gradient(to right, #2a2a2a 50%, transparent 0);
+        background-size: 200% 100%;
+        background-position: right;
+        .container_preview_img {
+          width: 28px;
+          height: 37px;
+          .preview_img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            overflow: hidden;
+          }
+        }
+        .preview_title {
+          margin-left: 5px;
+          p {
+            font-size: 12px;
+            letter-spacing: 0.17px;
+            line-height: 1.5;
+            color: rgb(245, 245, 245);
+            z-index: 1;
+          }
+        }
+      }
+    }
+  }
+  .activeSlide {
+    animation: makeItfadeIn 9s ease-out;
+  }
+  @keyframes makeItfadeIn {
+    100% {
+      background-position: left;
+    }
+  }
+  .swiper_desktop {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper_sliding {
+    width: 100%;
+    height: 100%;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .carousel_desktop {
+    height: 495px;
+    .preview {
+      .preview_card {
+        height: 80px;
+        .container_preview_img {
+          width: 40px;
+          height: 53px;
+        }
+        .preview_title {
+          margin-left: 15px;
+          p {
+            font-size: 14px;
+            letter-spacing: 0.2px;
+            line-height: 1.4;
+          }
+        }
+      }
+    }
+  }
+}

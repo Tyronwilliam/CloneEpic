@@ -1,0 +1,25 @@
+.swiper_mobile {
+  width: 100%;
+  padding-top: 80px;
+  padding-bottom: 50px;
+}
+
+.swiper_slide_img {
+  border-radius: 50%;
+  // flex: 1 1 0%;
+  background: rgb(18, 18, 18);
+  width: 224px;
+  height: 300px;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: white !important;
+}
+.swiper-pagination-bullet {
+  background-color: #ccc !important;
+}
+@media screen and (min-width: 768px) {
+  .swiper_mobile {
+    display: none;
+  }
+}

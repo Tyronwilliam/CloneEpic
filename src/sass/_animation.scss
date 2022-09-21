@@ -1,0 +1,16 @@
+@keyframes open {
+  from {
+    width: 0;
+  }
+  to {
+    width: 290px;
+  }
+}
+@keyframes close {
+  from {
+    width: 290px;
+  }
+  to {
+    width: 0;
+  }
+}

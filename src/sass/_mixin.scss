@@ -1,0 +1,42 @@
+@import "./variables";
+
+@mixin titlegame {
+  color: $main-typo-color;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.2px;
+}
+@mixin flex {
+  display: flex;
+  justify-content: space-between;
+}
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin flexCol {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@mixin buttonNav {
+  width: 64px;
+  height: 100%;
+  background-color: $background-color-blue;
+  @include flexCenter;
+}
+@mixin textOpacity {
+  opacity: 0.9;
+  color: #ccc;
+}
+@mixin flexBetCenter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@mixin flexColEnd {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+}

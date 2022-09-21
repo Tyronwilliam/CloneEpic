@@ -1,0 +1,32 @@
+@import "../../../sass/global";
+
+.input_icon {
+  display: none;
+
+}
+@media screen and (min-width: 1024px) {
+  .input_icon {
+    width: fit-content;
+    padding: 10px;
+    border-radius: 20px;
+    @include flexCenter;
+    background: rgb(32, 32, 32);
+
+    .open {
+      display: block;
+      width: 17px;
+      height: 17px;
+      opacity: 0.9;
+      color: #ccc;
+    }
+    input {
+      width: 175px;
+      background: rgb(32, 32, 32);
+      outline: none;
+      border: none;
+      caret-color: white;
+      color: $active;
+      margin-left: 10px;
+    }
+  }
+}
