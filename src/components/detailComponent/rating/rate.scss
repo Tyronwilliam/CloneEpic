@@ -1,0 +1,52 @@
+@import "../../../sass/variables";
+.rating {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.container_stars {
+  display: block;
+  width: fit-content;
+  padding-top: 4px;
+  .stars {
+    width: 14px;
+    height: 14px;
+  }
+}
+.rating_number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15px;
+  height: 15px;
+  color: rgba(245, 245, 245, 0.6);
+  font-size: 12px;
+  line-height: 1.364;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-weight: 700;
+  background: rgb(28, 28, 28);
+  padding: 10px;
+  margin-left: 10px;
+  border-radius: 5px;
+}
+.rating_tags {
+  display: none;
+  font-family: $main-font;
+}
+@media screen and (min-width: 768px) {
+  .rating_tags {
+    display: block;
+    span {
+      margin-left: 20px;
+      color: rgb(245, 245, 245);
+      font-size: 14px;
+      font-weight: normal;
+      line-height: 20px;
+      letter-spacing: 0.2px;
+    }
+  }
+}

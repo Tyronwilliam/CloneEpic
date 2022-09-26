@@ -2,30 +2,24 @@ import React from "react";
 // Import Swiper React components
 import { Swiper } from "swiper/react";
 // Import Swiper styles
-import "swiper/scss";
+// import "swiper/scss";
 import "swiper/scss/effect-coverflow";
 import "swiper/scss/pagination";
 import "./carouselMain.scss";
 // import required modules
 import { EffectCoverflow, Pagination } from "swiper";
 import { SwiperSlide } from "swiper/react";
-import { useEffect } from "react";
 import { useState } from "react";
 import CardMain from "../Card/CardMain/CardMain";
-import useFetch from "../../Hooks/useFetch";
+import { useAxios } from "../../Hooks/useAxios";
 
 function CarouselMain() {
-  const [games, setGames] = useState([]);
-  const { get } = useFetch();
   const apiKey = process.env.REACT_APP_RAWG_API_KEY;
-  useEffect(() => {
-    get(`https://api.rawg.io/api/games?key=${apiKey}&page_size=6`).then(
-      (res) => {
-        console.log(res);
-        setGames(res);
-      }
-    );
-  }, []);
+  const { response, loading, error } = useAxios({
+    method: "GET",
+    url: `https://api.rawg.io/api/games?key=${apiKey}&page_size=6`,
+  });
+
   return (
     <>
       <Swiper
@@ -44,7 +38,7 @@ function CarouselMain() {
         modules={[EffectCoverflow, Pagination]}
         className="swiper_mobile"
       >
-        {games?.map((game) => {
+        {response?.map((game) => {
           return (
             <SwiperSlide key={game.id} className="swiper_slide_img">
               <CardMain

@@ -1,0 +1,130 @@
+@import "../../../sass/variables.scss";
+
+.card_group {
+  width: 172.5px;
+  height: auto;
+  color: white;
+  font-family: $main-font;
+}
+.bg_opac {
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  padding: 7px 7px 0 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: background-color 0.2s ease-out;
+  color: $main-background;
+  .card_icone {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    visibility: hidden;
+  }
+  &:hover {
+    background-color: rgb(255, 255, 255, 0.1);
+    .card_icone {
+      width: 22px;
+      height: 22px;
+      color: $active;
+      background-color: black;
+      visibility: visible;
+    }
+  }
+}
+.card_link {
+  position: relative;
+
+  width: 100%;
+  height: 230px;
+  margin-bottom: 15px;
+  a {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+  }
+}
+.card_group_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  p {
+    font-size: 12px;
+    color: rgba(245, 245, 245, 0.6);
+    margin-bottom: 10px;
+  }
+  h3 {
+    color: rgb(245, 245, 245);
+    font-size: 14px;
+    letter-spacing: 0.2px;
+    line-height: 1.4;
+    font-weight: 400;
+    margin-bottom: 15px;
+  }
+}
+.card_group_price {
+  display: flex;
+  justify-content: space-between;
+  .card_promo {
+    align-self: center;
+    background-color: rgb(0, 116, 228);
+    color: rgb(245, 245, 245);
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 9px;
+    line-height: 15px;
+    letter-spacing: 1px;
+    font-weight: 500;
+  }
+  .card_pricing {
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    span {
+      font-size: 14px;
+      letter-spacing: 0.2px;
+      line-height: 1.4;
+      font-weight: 400;
+      &:first-of-type {
+        color: rgba(245, 245, 245, 0.6);
+        font-weight: normal;
+        line-height: 20px;
+
+        text-decoration: line-through;
+      }
+    }
+  }
+}
+@media screen and (min-width: 425px) {
+  .card_group {
+    width: 240px;
+  }
+  .card_link {
+    height: 320px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .card_group {
+    width: 172.5px;
+  }
+  .card_link {
+    height: 230px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .card_group {
+    width: 211px;
+  }
+  .card_link {
+    height: 230px;
+  }
+}

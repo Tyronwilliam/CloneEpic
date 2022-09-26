@@ -1,0 +1,64 @@
+@import "../../sass/variables";
+.sub_carousel_container {
+  margin-bottom: 50px;
+}
+.sub_carousel_tilte {
+  display: flex;
+  color: rgb(245, 245, 245);
+  margin-bottom: 30px;
+  font-size: 14px;
+
+  align-items: center;
+  h2 {
+    font-size: 18px;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    line-height: 1.4;
+    font-weight: normal;
+  }
+}
+.group_swiperSlide {
+  width: 172.5px;
+  height: auto;
+  color: white;
+  font-family: $main-font;
+}
+.sub_carousel_entete {
+  display: flex;
+  justify-content: space-between;
+  color: $active;
+  .sub_carousel_direction {
+    width: 80px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    .button {
+      width: 30px;
+      height: 30px;
+      color: rgb(245, 245, 245);
+      background: #2a2a2a;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+@media screen and (min-width: 425px) {
+  .group_swiperSlide {
+    width: 240px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .group_swiperSlide {
+    width: 172.5px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .group_swiperSlide {
+    width: 211px;
+  }
+  .card_link {
+    height: 280px;
+  }
+}

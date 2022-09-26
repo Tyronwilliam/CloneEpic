@@ -1,0 +1,29 @@
+.aside {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  column-gap: 10px;
+  margin-bottom: 50px;
+}
+.aside_card_container {
+  width: 100%;
+  height: fit-content;
+  margin: 0 auto 25px auto;
+}
+
+@media screen and (min-width: 600px) {
+  .aside {
+    flex-wrap: nowrap;
+  }
+  .aside_card_container {
+    width: 100%;
+    margin: 0;
+  }
+}
+// @media screen and (min-width: 1024px) {
+//   .aside_card_container {
+//     width: 450px;
+//     height: auto;
+//   }
+// }

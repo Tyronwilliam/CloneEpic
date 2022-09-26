@@ -1,9 +1,17 @@
-@import "./variables";
-@import "./_typographie";
-@import "./mixin";
-@import "./animation";
-
-
+@import "../sass/variables.scss";
+@import "./_typographie.scss";
+@import "./mixin.scss";
+@import "./animation.scss";
+// @import "../components/FramerMotion/CarouselDesktop/carouseldesktop.scss";
+// @import "../components/Card/CardMain/cardmain.scss";
+// @import "../components/Card/CardGroup/cardgroup.scss";
+// @import "../components/Card/CardInfos/cardinfos.scss";
+// @import "../components/Aside/aside.scss";
+// @import "../components/detailComponent/rating/rate.scss";
+// @import "../pages/Details/detail.scss";
+// @import "../pages/Home/home.scss";
+// @import "../components/FramerMotion/carouselMain.scss";
+// @import "../components/SubCarousel/viewsubcarousel.scss";
 
 * {
   box-sizing: border-box;

@@ -1,4 +1,3 @@
-@import "../../../sass/global";
 .carousel_desktop {
   display: none;
 }
@@ -10,7 +9,7 @@
     column-gap: 20px;
     color: white;
     margin-top: 30px;
-
+    margin-bottom: 50px;
     .current {
       position: relative;
       width: 70%;
@@ -43,47 +42,32 @@
           padding: 10px;
           border-radius: 5px;
         }
+        .current_main_p {
+          margin-bottom: 20px;
+        }
         p {
           width: fit-content;
-          margin-bottom: 20px;
           background-color: rgb(42, 42, 42, 0.2);
           padding: 10px;
           border-radius: 5px;
+          font-size: 12px;
         }
         .current_price {
           width: 100%;
           display: flex;
           align-items: center;
-          p {
-            margin-top: 20px;
-          }
-          .current_bg {
-            position: relative;
-            width: 280px;
-            height: 50px;
-            margin-left: 10px;
 
-            button {
-              width: 100%;
-              height: 100%;
-              border: none;
-              padding: 10px;
-              background-color: transparent;
-              color: white;
-              border-radius: 5px;
-            }
-            .white_bg {
-              position: absolute;
-              width: 100%;
-              height: 100%;
-              top: 0;
-              left: 0;
-              z-index: 1;
-              border-radius: 5px;
-              &:hover {
-                background-color: white;
-                opacity: 0.1;
-              }
+          button {
+            width: 100%;
+            height: 100%;
+            border: none;
+            padding: 10px;
+            background-color: transparent;
+            color: white;
+            border-radius: 5px;
+            margin-left: 20px;
+            &:hover {
+              background-color: rgba(255, 255, 255, 0.2);
             }
           }
         }
@@ -96,6 +80,7 @@
       flex-direction: column;
       justify-content: space-between;
       flex-shrink: 1;
+      cursor: pointer;
       //   background-color: red;
       .preview_card {
         width: 160px;
@@ -107,6 +92,9 @@
         background: linear-gradient(to right, #2a2a2a 50%, transparent 0);
         background-size: 200% 100%;
         background-position: right;
+        &:hover {
+          background-color: rgb(255, 255, 255, 0.1);
+        }
         .container_preview_img {
           width: 28px;
           height: 37px;
@@ -148,9 +136,39 @@
     height: 100%;
   }
 }
+@media screen and (min-width: 890px) {
+  .carousel_desktop {
+    height: 450px;
+    .current {
+      .current_text {
+        .current_main_p {
+          margin-bottom: 30px;
+        }
+        .current_price {
+          p {
+            font-size: 14px;
+          }
+          button {
+            padding: 15px;
+          }
+        }
+      }
+    }
+  }
+}
 @media screen and (min-width: 1440px) {
   .carousel_desktop {
     height: 495px;
+
+    height: 450px;
+    .current {
+      .current_text {
+        .current_main_p {
+          font-size: 17px;
+        }
+      }
+    }
+
     .preview {
       .preview_card {
         height: 80px;

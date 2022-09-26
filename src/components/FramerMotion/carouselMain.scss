@@ -1,15 +1,16 @@
 .swiper_mobile {
   width: 100%;
-  padding-top: 80px;
-  padding-bottom: 50px;
+  padding-top: 80px !important;
+  padding-bottom: 50px !important;
+  margin-bottom: 50px;
 }
 
 .swiper_slide_img {
   border-radius: 50%;
   // flex: 1 1 0%;
   background: rgb(18, 18, 18);
-  width: 224px;
-  height: 300px;
+  width: 224px !important;
+  height: 300px !important;
 }
 
 .swiper-pagination-bullet-active {

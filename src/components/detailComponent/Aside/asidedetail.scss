@@ -1,0 +1,125 @@
+@import "../../../sass/variables";
+.aside_container {
+  width: 100%;
+}
+.container_button {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  button {
+    color: $active;
+    font-size: 14px;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: 500;
+    border: 0;
+    padding: 0px 20px;
+    font-family: $main-font;
+    height: 50px;
+    margin-bottom: 10px;
+    background-color: transparent;
+  }
+  .one {
+    background: rgb(34, 139, 34);
+  }
+  .two {
+    color: rgb(245, 245, 245);
+    border: 1px solid rgba(245, 245, 245, 0.6);
+    &:hover {
+      background-color: rgba(245, 245, 245, 0.1);
+    }
+  }
+  .three {
+    color: rgb(245, 245, 245);
+    border: 1px solid rgba(245, 245, 245, 0.6);
+    height: 34px;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    &:hover {
+      background-color: rgba(245, 245, 245, 0.1);
+    }
+  }
+}
+.aside_price {
+  width: 100%;
+  height: auto;
+  .aside_list {
+    width: 170px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .aside_content {
+      width: fit-content;
+      padding: 0;
+      border: 0;
+      margin-bottom: 10px;
+      &:first-of-type {
+        background: rgb(34, 139, 34);
+        color: rgb(245, 245, 245);
+        padding: 5px 10px;
+        border-radius: 4px;
+        font-size: 9px;
+        line-height: 15px;
+        letter-spacing: 1px;
+        font-weight: 500;
+      }
+      &:nth-child(2) {
+        color: rgba(245, 245, 245, 0.6);
+        font-weight: normal;
+        line-height: 20px;
+        text-decoration: line-through;
+      }
+    }
+  }
+}
+.aside_title {
+  width: fit-content;
+  margin: 10px auto 15px auto;
+  text-transform: uppercase;
+  background: rgb(28, 28, 28);
+  color: rgb(245, 245, 245);
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 9px;
+  line-height: 15px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.aside_container_tech {
+  font-family: $main-font;
+  color: rgb(245, 245, 245, 0.6);
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 20px;
+  letter-spacing: 0.2px;
+  .aside_tech {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px 0px;
+
+    span:nth-child(2) {
+      text-align: right;
+      color: rgb(245, 245, 245);
+      margin-left: 5px;
+    }
+  }
+}
+@media screen and (min-width: 768px) {
+  .aside_container {
+    padding-top: 150px;
+  }
+  .aside_price {
+    .aside_list {
+      margin: 0;
+    }
+  }
+  .aside_title {
+    margin: 10px 0 15px 0;
+  }
+}
