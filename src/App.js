@@ -3,6 +3,7 @@ import ViewSaD from "./components/SearchAndDiscover/ViewSaD";
 import Home from "../src/pages/Home/index";
 import { Routes, Route } from "react-router-dom";
 import Detail from "./pages/Details/Detail";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/detail/fr/:id" element={<Detail />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

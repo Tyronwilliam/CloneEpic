@@ -7,6 +7,8 @@ import { FiChevronLeft } from "react-icons/fi";
 import { FiChevronRight } from "react-icons/fi";
 import { SwiperSlide } from "swiper/react";
 import "./viewsubcarousel.scss";
+import { Link } from "react-router-dom";
+
 function ViewSubCarousel({ title, data }) {
   const navigationPrevRef = useRef(null);
   const navigationNextRef = useRef(null);
@@ -35,13 +37,16 @@ function ViewSubCarousel({ title, data }) {
           }
           return (
             <SwiperSlide className="group_swiperSlide" key={game.id}>
-              <CardGroup
-                img={game.background_image}
-                title={game.name}
-                promo="-50%"
-                oldPrice="29,99"
-                price="14.99"
-              />
+              {/* <Link to={`/detail/fr/${game.slug}`} className="link"> */}
+                <CardGroup
+                  img={game.background_image}
+                  title={game.name}
+                  promo="-50%"
+                  oldPrice="29,99"
+                  price="14.99"
+                  slug={game.slug}
+                />
+              {/* </Link> */}
             </SwiperSlide>
           );
         })}

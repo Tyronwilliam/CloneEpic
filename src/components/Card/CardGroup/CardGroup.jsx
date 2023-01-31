@@ -2,16 +2,21 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./cardgroup.scss";
 import { BsPlusCircle } from "react-icons/bs";
-function CardGroup({ img, title, promo, oldPrice, price }) {
+import { Link } from "react-router-dom";
+
+function CardGroup({ img, title, promo, oldPrice, price, slug }) {
   return (
     <div className="card_group">
       <div className="card_link">
         <div className="bg_opac">
-          <BsPlusCircle className="card_icone" />
+          <Link to={`/detail/fr/${slug}`} className="link"></Link>
+          <BsPlusCircle
+            className="card_icone"
+            onClick={() => console.log("hello")}
+          />
         </div>
-        <a href="#">
-          <img src={img} alt="" />
-        </a>
+
+        <img src={img} alt="" />
       </div>
       <div className="card_group_text">
         <p>Jeu de base</p>

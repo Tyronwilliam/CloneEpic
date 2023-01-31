@@ -160,7 +160,6 @@
   .carousel_desktop {
     height: 495px;
 
-    height: 450px;
     .current {
       .current_text {
         .current_main_p {
@@ -186,5 +185,10 @@
         }
       }
     }
+  }
+}
+@media screen and (min-width: 2149px) {
+  .carousel_desktop {
+    height: 800px;
   }
 }

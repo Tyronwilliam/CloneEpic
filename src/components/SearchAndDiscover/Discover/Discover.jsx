@@ -12,8 +12,9 @@ function Discover() {
       <div className={`decouvrir ${active}`} onClick={toggle}>
         <p>Découvrir</p>
         <HiChevronDown />
+        <Drop isOpen={isOpen} toggle={toggle} myClass={"motion_desk"} />
       </div>
-      <Drop isOpen={isOpen} toggle={toggle} />
+      <Drop isOpen={isOpen} toggle={toggle} myClass={"motion"} />
     </>
   );
 }

@@ -8,13 +8,13 @@ const variants = {
   closed: { opacity: 0, x: "-100%" },
 };
 
-function Drop({ isOpen, toggle }) {
+function Drop({ isOpen, toggle, myClass }) {
   return (
     // STYLE ON LIST
 
     <motion.nav
       animate={isOpen ? "open" : "closed"}
-      className="motion"
+      className={myClass}
       variants={variants}
     >
       <section className="drop">

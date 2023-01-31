@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./cardmain.scss";
-function CardMain({ img, title, text, price }) {
+function CardMain({ img, title }) {
   return (
     <div className="card">
       <img src={img} alt="" className="background" />

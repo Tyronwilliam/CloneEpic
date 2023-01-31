@@ -8,6 +8,7 @@
 }
 .bg_opac {
   position: absolute;
+  z-index: 50;
   display: flex;
   justify-content: flex-end;
   padding: 7px 7px 0 0;
@@ -17,7 +18,15 @@
   height: 100%;
   transition: background-color 0.2s ease-out;
   color: $main-background;
+  cursor: pointer;
+  .link {
+    width: 100%;
+    height: 100%;
+  }
   .card_icone {
+    position: absolute;
+    z-index: 100;
+
     width: 24px;
     height: 24px;
     border-radius: 50%;
@@ -31,26 +40,23 @@
       color: $active;
       background-color: black;
       visibility: visible;
+      cursor: pointer;
     }
   }
 }
+
 .card_link {
   position: relative;
 
   width: 100%;
   height: 230px;
   margin-bottom: 15px;
-  a {
+
+  img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
     border-radius: 5px;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 5px;
-    }
   }
 }
 .card_group_text {

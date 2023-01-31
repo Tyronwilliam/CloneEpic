@@ -1,0 +1,54 @@
+@import "../../sass/variables";
+
+.footer {
+  width: 100%;
+  height: fit-content;
+  background: rgb(38, 38, 38);
+  margin-top: 50px;
+}
+.container_footer {
+  padding: 16px 24px;
+  color: $active;
+}
+.reseau_backtop {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  .footer_reseaux {
+    display: flex;
+    width: 75px;
+    justify-content: space-between;
+    a {
+      text-decoration: none;
+    }
+  }
+  .reseau {
+    width: 35px;
+    height: 31px;
+    color: white;
+    transition: color 0.5s ease-in-out;
+    &:hover {
+      color: #007aff;
+    }
+  }
+}
+.disclaimer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.disclaimer_content {
+  display: flex;
+  margin-bottom: 20px;
+  a {
+    text-decoration: none;
+    text-decoration: underline;
+    color: $active;
+    font-family: $main-font;
+    margin: 0 5px;
+    &:hover {
+      color: #007aff;
+    }
+  }
+}

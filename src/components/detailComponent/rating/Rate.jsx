@@ -25,9 +25,7 @@ function Rate({ rate, tag }) {
   // TAG
   const sliceTag = () => {
     let arr = [...test];
-    console.log(arr, "arr");
     let newArr = arr.slice(2, 4);
-    console.log(newArr, "yeah");
     return setFirstTags(newArr);
   };
   return (

@@ -12,6 +12,7 @@ import { SwiperSlide } from "swiper/react";
 import { useState } from "react";
 import CardMain from "../Card/CardMain/CardMain";
 import { useAxios } from "../../Hooks/useAxios";
+import { Link } from "react-router-dom";
 
 function CarouselMain() {
   const apiKey = process.env.REACT_APP_RAWG_API_KEY;
@@ -41,11 +42,14 @@ function CarouselMain() {
         {response?.map((game) => {
           return (
             <SwiperSlide key={game.id} className="swiper_slide_img">
-              <CardMain
-                title={game.name}
-                price={game.rating}
-                img={game.short_screenshots[0].image}
-              />
+              <Link to={`/detail/fr/${game.slug}`} className="link">
+                <CardMain
+                  title={game.name}
+                  price={game.rating}
+                  img={game.short_screenshots[0].image}
+                  slug={game.slug}
+                />
+              </Link>
             </SwiperSlide>
           );
         })}

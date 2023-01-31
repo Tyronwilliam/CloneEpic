@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import React, { useEffect } from "react";
+import {  useParams } from "react-router-dom";
 import { useAxiosDetail } from "../../Hooks/useAxiosDetail";
 import "./detail.scss";
 import Rate from "../../components/detailComponent/rating/Rate";
@@ -18,7 +18,8 @@ function Detail() {
     url: `https://api.rawg.io/api/games/${id.id}?key=${apiKey}`,
   });
   useEffect(() => {
-    console.log(response, "hello world ");
+    window.scrollTo(0, 0);
+    console.log(response);
   }, [response]);
 
   return (
@@ -27,15 +28,19 @@ function Detail() {
         <section className="section_flex">
           <article className="right">
             {/* Title of game */}
-            <h1>{response?.name}</h1>
+            {response?.name === undefined ? (
+              <h1>This game has no name</h1>
+            ) : (
+              <h1>{response?.name}</h1>
+            )}
             {/* Rating */}
             <Rate rate={response?.rating_top} tag={response?.tags} />
 
             <div className="right_img">
               {/* IMG */}
-              <Link to={response?.website}>
+              <a href={response?.website} target="_blank">
                 <img src={response?.background_image} alt="" />
-              </Link>
+              </a>
             </div>
             <div>
               {/* Description */}
@@ -152,10 +157,10 @@ function Detail() {
             <h3>Évaluations</h3>
           </div>
           <div className="container_eval-circle">
-            {response?.ratings.slice(0,-1).map((rating, index) => {
+            {response?.ratings.slice(0, -1).map((rating, index) => {
               return (
                 <div className="container_svg">
-                  <div class="single-chart" key={index}>
+                  <div className="single-chart" key={index}>
                     <svg
                       viewBox="0 0 35 35"
                       class="circular-chart"
@@ -163,20 +168,20 @@ function Detail() {
                       width="75"
                     >
                       <path
-                        class="circle-bg"
+                        className="circle-bg"
                         d="M18 2.0845
                       a 15.9155 15.9155 0 0 1 0 31.831
                       a 15.9155 15.9155 0 0 1 0 -31.831"
                       />
                       <path
-                        class="circle"
+                        className="circle"
                         stroke-dasharray={`${rating.percent}, 100`}
                         d="M18 2.0845
                       a 15.9155 15.9155 0 0 1 0 31.831
                       a 15.9155 15.9155 0 0 1 0 -31.831"
                       />
-                      <text x="18" y="20.35" class="percentage">
-                        {rating.percent}{" "}
+                      <text x="18" y="20.35" className="percentage">
+                        {rating.percent}&#x25;
                       </text>
                     </svg>
                   </div>
@@ -188,7 +193,89 @@ function Detail() {
             })}
           </div>
 
-          {/* cONFIG */}
+          {/* CONFIG */}
+          <div className="config_main_title">
+            <h3>Configuration</h3>
+          </div>
+          <aside className="config">
+            <div className="config_title">
+              <span>windows</span>
+            </div>
+            <div className="config_flex">
+              <div className="left">
+                <div className="config_box">
+                  <div>
+                    <span className="min_max">Minimum</span>
+                  </div>
+                  <div className="right_box">
+                    <span className="min_max">Configuration recommandée</span>
+                  </div>
+                </div>
+                <div className="config_box">
+                  <div>
+                    <span className="">Processeur</span>
+                    <span>
+                      Intel Core 2 Quad CPU Q6600 @ 2,40 GHz (4 CPU) / AMD
+                      Phenom 9850 Quad-Core Processor (4 CPU) @ 2,5 GHz
+                    </span>
+                  </div>
+                  <div className="right_box">
+                    <span className="">Processeur </span>
+                    <span>
+                      Intel Core i5 3470 @ 3,2 GHz (4 CPU) / AMD X8 FX-8350 @ 4
+                      GHz (8 CPU)
+                    </span>
+                  </div>
+                </div>
+                {/* THIRD */}
+                <div className="config_box">
+                  <div>
+                    <span className="">Mémoire</span>
+                    <span>4 Go de RAM</span>
+                  </div>
+                  <div className="right_box">
+                    <span className="">Mémoire</span>
+                    <span>8 Go de RAM</span>
+                  </div>
+                </div>
+                {/* FOURTH */}
+                <div className="config_box">
+                  <div>
+                    <span className="">Carte graphique</span>
+                    <span>
+                      NVIDIA 9800 GT 1 Go / AMD HD 4870 1 Go (DX 10, 10.1, 11)
+                    </span>
+                  </div>
+                  <div className="right_box">
+                    <span className="">Carte graphique</span>
+                    <span>NVIDIA GTX 660 2 Go / AMD HD7870 2 Go</span>
+                  </div>
+                </div>
+                {/* FIFITH */}
+                <div className="config_box">
+                  <div>
+                    <span className="">Carte son</span>
+                    <span>100 % compatible avec DirectX 10</span>
+                  </div>
+                  <div className="right_box">
+                    <span className="">Carte son</span>
+                    <span>100 % compatible avec DirectX 10</span>
+                  </div>
+                </div>
+                {/* SIXTH */}
+                <div className="config_box">
+                  <div>
+                    <span className=""> Disque dur</span>
+                    <span>90 GB available space</span>
+                  </div>
+                  <div className="right_box">
+                    <span className="">Disque dur</span>
+                    <span>90 GB available space</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </aside>
         </section>
       </section>
     </main>
