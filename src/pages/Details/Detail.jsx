@@ -12,14 +12,12 @@ import { BiWorld } from "react-icons/bi";
 import { TbMoodCrazyHappy } from "react-icons/tb";
 function Detail() {
   let id = useParams();
-  const apiKey = process.env.REACT_APP_RAWG_API_KEY;
   const { response, loading, error } = useAxiosDetail({
     method: "GET",
-    url: `https://api.rawg.io/api/games/${id.id}?key=${apiKey}`,
+    url: `https://api.rawg.io/api/games/${id.id}?key=${process.env.REACT_APP_RAWG_API_KEY}`,
   });
   useEffect(() => {
     window.scrollTo(0, 0);
-    console.log(response);
   }, [response]);
 
   return (

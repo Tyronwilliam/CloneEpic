@@ -9,10 +9,9 @@ import { useAxios } from "../../Hooks/useAxios";
 import { AiOutlineGift } from "react-icons/ai";
 import "./home.scss";
 function Home() {
-  const apiKey = process.env.REACT_APP_RAWG_API_KEY;
   const { response, loading, error } = useAxios({
     method: "GET",
-    url: `https://api.rawg.io/api/games?key=${apiKey}&page_size=36&ordering=updated`,
+    url: `https://api.rawg.io/api/games?key=${process.env.REACT_APP_RAWG_API_KEY}&page_size=36&ordering=updated`,
   });
   const {
     response: response2,
@@ -20,7 +19,7 @@ function Home() {
     error: error2,
   } = useAxios({
     method: "GET",
-    url: `https://api.rawg.io/api/publishers?key=${apiKey}&page_size=3`,
+    url: `https://api.rawg.io/api/publishers?key=${process.env.REACT_APP_RAWG_API_KEY}&page_size=3`,
   });
   const {
     response: response3,
@@ -28,7 +27,7 @@ function Home() {
     error: error3,
   } = useAxios({
     method: "GET",
-    url: `https://api.rawg.io/api/games?key=${apiKey}&page_size=36&ordering=released`,
+    url: `https://api.rawg.io/api/games?key=${process.env.REACT_APP_RAWG_API_KEY}&page_size=36&ordering=released`,
   });
   const {
     response: response4,
@@ -36,11 +35,9 @@ function Home() {
     error: error4,
   } = useAxios({
     method: "GET",
-    url: `https://api.rawg.io/api/collections/lists/popular?key=${apiKey}&page_size=4&`,
+    url: `https://api.rawg.io/api/collections/lists/popular?key=${process.env.REACT_APP_RAWG_API_KEY}&page_size=4&`,
   });
-  useEffect(() => {
-    console.log(response4, "aiaiaiai");
-  }, [response4]);
+
   const dataAside = response2;
   const data = response;
   return (
@@ -70,11 +67,13 @@ function Home() {
         <div className="free_content">
           {response4?.map((free, index) => {
             return (
-              <FreeCard
-                slug={free.slug}
-                img={free.game_background.url}
-                title={free.name}
-              />
+              <React.Fragment key={index}>
+                <FreeCard
+                  slug={free.slug}
+                  img={free.game_background.url}
+                  title={free.name}
+                />
+              </React.Fragment>
             );
           })}
         </div>
